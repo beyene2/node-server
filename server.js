@@ -42,6 +42,6 @@ app.get('/about',(req,res)=>{
     });
 });
 
-app.listen(port, process.env.IP,()=>{
+app.listen(port||process.env.PORT, process.env.IP,()=>{
     console.log("Server has started");
 })
