@@ -1,7 +1,7 @@
 const express=require("express");
 const hbs = require("hbs");
 const fs = require("fs");
-const port = process.env.PORT;
+//const port = process.env.PORT;
 var app = express();
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'sbs');
@@ -38,10 +38,15 @@ app.get('/',(req,res)=>{
 });
 app.get('/about',(req,res)=>{
     res.render('about.hbs',{
-        pageTitle:"About Page",
+        pageTitle:"About",
+    });
+});
+app.get('/projects',(req,res)=>{
+    res.render('projects.hbs',{
+        pageTitle:"Projects",
     });
 });
 
-app.listen(port||process.env.PORT, process.env.IP,()=>{
+app.listen(process.env.PORT, process.env.IP,()=>{
     console.log("Server has started");
 })
